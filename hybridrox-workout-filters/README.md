@@ -17,13 +17,15 @@
 
 ## Install
 1. Copy `hybridrox-workout-filters` to `wp-content/plugins/`.
-2. Build assets:
+2. (Optional) Build assets if you want to regenerate frontend bundle:
    ```bash
    cd wp-content/plugins/hybridrox-workout-filters
    npm install
    npm run build
    ```
 3. Activate plugin in WP Admin.
+
+> The plugin ships with a prebuilt `dist/` bundle, so it works immediately without running `npm install` / `npm run build`.
 
 ## Shortcode
 ```text
@@ -108,3 +110,9 @@ wp hybridrox seed-workouts --count=60
   2. Hit REST endpoints and verify filter query mapping.
   3. Place shortcode on Astra page and Elementor page.
   4. Verify URL syncing and pagination behavior.
+
+## npm registry
+This plugin pins npm scopes to the public npm registry via `.npmrc`:
+- `https://registry.npmjs.org/`
+
+If your environment injects custom proxy settings, verify they do not override npm registry access.
