@@ -1,0 +1,9 @@
+.hybridrox-filters-app { font-family: system-ui, sans-serif; }
+.hybridrox-filters-app .hybridrox-filterbar { display:grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap:8px; margin-bottom:12px; }
+.hybridrox-filters-app .hybridrox-input,.hybridrox-filters-app .hybridrox-select,.hybridrox-filters-app input[type="number"] { width:100%; padding:8px; border:1px solid #d2d7e0; border-radius:6px; }
+.hybridrox-filters-app .hybridrox-list { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+.hybridrox-filters-app .hybridrox-card { border:1px solid #e8ebf0; border-radius:8px; padding:12px; background:#fff; }
+.hybridrox-filters-app .hybridrox-controls { display:flex; gap:8px; margin:8px 0; }
+.hybridrox-filters-app .hybridrox-pagination { display:flex; align-items:center; gap:10px; margin-top:12px; }
+.hybridrox-filters-app button:focus,.hybridrox-filters-app input:focus,.hybridrox-filters-app select:focus { outline:2px solid #2271b1; outline-offset:1px; }
+@media (max-width: 767px) { .hybridrox-filters-app .hybridrox-controls { flex-direction:column; } }
