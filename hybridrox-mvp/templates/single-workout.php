@@ -37,7 +37,7 @@ while (have_posts()) :
         </header>
 
         <section>
-            <h2>Structure du workout</h2>
+            <h2>Structure de l'entraînement</h2>
             <?php if ($warmup) : ?><h3>Échauffement</h3><p><?php echo nl2br(esc_html($warmup)); ?></p><?php endif; ?>
             <?php if (! empty($workout_blocks)) : ?>
                 <h3>Blocs</h3>

@@ -30,7 +30,7 @@ class Hybridrox_Frontend
 
     public static function register_page_template(array $templates): array
     {
-        $templates['page-workouts-listing.php'] = 'Hybridrox - Liste des workouts';
+        $templates['page-workouts-listing.php'] = 'Hybridrox - Liste des entraînements';
         return $templates;
     }
 
@@ -102,7 +102,7 @@ class Hybridrox_Frontend
                 self::render_workout_card(get_the_ID());
             }
         } else {
-            echo '<p class="hybridrox-empty">Aucun workout trouvé avec ces filtres.</p>';
+            echo '<p class="hybridrox-empty">Aucun entraînement trouvé avec ces filtres.</p>';
         }
 
         echo '</div>';

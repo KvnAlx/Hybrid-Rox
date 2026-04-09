@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Hybridrox MVP System
- * Description: MVP workout system for Hybridrox with CPT, taxonomies, ACF fields, FacetWP integration, templates, and seed data.
+ * Description: Système MVP Hybridrox avec CPT d'entraînements, taxonomies, champs ACF, filtres FacetWP, templates et données d'exemple.
  * Version: 1.0.0
  * Author: Hybridrox
  * Text Domain: hybridrox-mvp

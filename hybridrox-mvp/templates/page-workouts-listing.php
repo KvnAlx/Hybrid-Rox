@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Hybridrox Workouts Listing
+ * Template Name: Hybridrox Liste Entraînements
  */
 
 if (! defined('ABSPATH')) {

@@ -17,15 +17,15 @@ class Hybridrox_CPT_Tax
     {
         register_post_type('workout', [
             'labels' => [
-                'name' => __('Workouts', 'hybridrox-mvp'),
-                'singular_name' => __('Workout', 'hybridrox-mvp'),
+                'name' => __('Entraînements', 'hybridrox-mvp'),
+                'singular_name' => __('Entraînement', 'hybridrox-mvp'),
                 'add_new' => __('Ajouter', 'hybridrox-mvp'),
-                'add_new_item' => __('Ajouter un workout', 'hybridrox-mvp'),
-                'edit_item' => __('Modifier le workout', 'hybridrox-mvp'),
-                'new_item' => __('Nouveau workout', 'hybridrox-mvp'),
-                'view_item' => __('Voir le workout', 'hybridrox-mvp'),
-                'search_items' => __('Rechercher des workouts', 'hybridrox-mvp'),
-                'not_found' => __('Aucun workout trouvé', 'hybridrox-mvp'),
+                'add_new_item' => __('Ajouter un entraînement', 'hybridrox-mvp'),
+                'edit_item' => __('Modifier l\'entraînement', 'hybridrox-mvp'),
+                'new_item' => __('Nouvel entraînement', 'hybridrox-mvp'),
+                'view_item' => __('Voir l\'entraînement', 'hybridrox-mvp'),
+                'search_items' => __('Rechercher des entraînements', 'hybridrox-mvp'),
+                'not_found' => __('Aucun entraînement trouvé', 'hybridrox-mvp'),
             ],
             'public' => true,
             'has_archive' => true,
@@ -74,19 +74,26 @@ class Hybridrox_CPT_Tax
     public static function ensure_default_terms(): void
     {
         $term_map = [
-            'level' => ['beginner', 'intermediate', 'advanced'],
-            'goal' => ['endurance', 'strength', 'power', 'engine', 'technique', 'recovery'],
-            'format' => ['for-time', 'amrap', 'emom', 'intervals', 'chipper', 'ygig', 'ladder', 'benchmark'],
-            'equipment' => ['sled', 'wall-ball', 'sandbag', 'kettlebell', 'rower', 'ski-erg-machine', 'no-equipment'],
-            'stations' => ['run', 'ski-erg', 'sled-push', 'sled-pull', 'burpee-broad-jump', 'row', 'farmers-carry', 'sandbag-lunges', 'wall-balls'],
-            'environment' => ['gym', 'outdoor', 'small-space'],
-            'intensity' => ['low', 'moderate', 'high'],
+            'level' => ['beginner' => 'Débutant', 'intermediate' => 'Intermédiaire', 'advanced' => 'Avancé'],
+            'goal' => ['endurance' => 'Endurance', 'strength' => 'Force', 'power' => 'Puissance', 'engine' => 'Engine', 'technique' => 'Technique', 'recovery' => 'Récupération'],
+            'format' => ['for-time' => 'Au chrono', 'amrap' => 'AMRAP', 'emom' => 'EMOM', 'intervals' => 'Intervalles', 'chipper' => 'Chipper', 'ygig' => 'YGIG', 'ladder' => 'Échelle', 'benchmark' => 'Benchmark'],
+            'equipment' => ['sled' => 'Traîneau', 'wall-ball' => 'Ballon mural', 'sandbag' => 'Sac de sable', 'kettlebell' => 'Kettlebell', 'rower' => 'Rameur', 'ski-erg-machine' => 'Ski Erg', 'no-equipment' => 'Sans équipement'],
+            'stations' => ['run' => 'Course', 'ski-erg' => 'Ski Erg', 'sled-push' => 'Poussée traîneau', 'sled-pull' => 'Tirage traîneau', 'burpee-broad-jump' => 'Burpee broad jump', 'row' => 'Rameur', 'farmers-carry' => 'Farmer carry', 'sandbag-lunges' => 'Fentes sac de sable', 'wall-balls' => 'Ballons muraux'],
+            'environment' => ['gym' => 'Salle', 'outdoor' => 'Extérieur', 'small-space' => 'Petit espace'],
+            'intensity' => ['low' => 'Faible', 'moderate' => 'Modérée', 'high' => 'Élevée'],
         ];
 
-        foreach ($term_map as $taxonomy => $slugs) {
-            foreach ($slugs as $slug) {
-                if (! term_exists($slug, $taxonomy)) {
-                    wp_insert_term(ucwords(str_replace('-', ' ', $slug)), $taxonomy, ['slug' => $slug]);
+        foreach ($term_map as $taxonomy => $terms) {
+            foreach ($terms as $slug => $label) {
+                $existing = term_exists($slug, $taxonomy);
+                if (! $existing) {
+                    wp_insert_term($label, $taxonomy, ['slug' => $slug]);
+                    continue;
+                }
+
+                $term_id = is_array($existing) ? (int) $existing['term_id'] : (int) $existing;
+                if ($term_id > 0) {
+                    wp_update_term($term_id, $taxonomy, ['name' => $label]);
                 }
             }
         }
