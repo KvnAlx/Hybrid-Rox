@@ -1,0 +1,251 @@
+:root {
+  --hrx-bg: #f5f7fb;
+  --hrx-card: #ffffff;
+  --hrx-text: #0f172a;
+  --hrx-muted: #475569;
+  --hrx-primary: #2563eb;
+  --hrx-border: #dbe3ef;
+  --hrx-radius: 14px;
+}
+
+.hybridrox-container,
+.hybridrox-single {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  color: var(--hrx-text) !important;
+}
+
+.hybridrox-page-header {
+  margin-bottom: 20px;
+}
+
+.hybridrox-container h1,
+.hybridrox-container h2,
+.hybridrox-container h3,
+.hybridrox-container p,
+.hybridrox-single h1,
+.hybridrox-single h2,
+.hybridrox-single h3,
+.hybridrox-single h4,
+.hybridrox-single p {
+  color: var(--hrx-text) !important;
+}
+
+.hybridrox-kicker {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 12px;
+  color: var(--hrx-primary);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.hybridrox-layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 22px;
+}
+
+.hybridrox-sidebar {
+  background: var(--hrx-bg);
+  border: 1px solid var(--hrx-border);
+  border-radius: var(--hrx-radius);
+  padding: 16px;
+  position: sticky;
+  top: 24px;
+  align-self: start;
+}
+
+.hybridrox-filters {
+  display: grid;
+  gap: 10px;
+}
+
+.hybridrox-filter-item {
+  background: #fff;
+  border: 1px solid var(--hrx-border);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.hybridrox-filter-item label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.hybridrox-workout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.hybridrox-workout-card {
+  background: var(--hrx-card);
+  border: 1px solid var(--hrx-border);
+  border-radius: var(--hrx-radius);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.hybridrox-workout-thumb img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.hybridrox-workout-body {
+  padding: 14px;
+  color: var(--hrx-text) !important;
+}
+
+.hybridrox-workout-card h3 {
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+
+.hybridrox-workout-card h3 a {
+  text-decoration: none;
+  color: var(--hrx-text) !important;
+}
+
+.hybridrox-duration {
+  color: var(--hrx-primary);
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.hybridrox-card-description {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--hrx-muted) !important;
+}
+
+.hybridrox-meta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hybridrox-meta li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: var(--hrx-muted) !important;
+}
+
+.hybridrox-btn {
+  margin-top: 10px;
+  display: inline-block;
+  background: var(--hrx-primary);
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.hybridrox-results {
+  min-width: 0;
+}
+
+.hybridrox-pager {
+  margin-top: 18px;
+}
+
+/* FacetWP normalization against theme styles */
+.hybridrox-container .facetwp-facet {
+  margin-bottom: 0;
+}
+
+.hybridrox-container .facetwp-checkbox {
+  display: block;
+  padding: 6px 8px 6px 28px;
+  border-radius: 8px;
+  background-color: #fff !important;
+  border: 1px solid #eef2f7;
+  margin: 6px 0 !important;
+  color: #0f172a !important;
+  background-position: 8px 10px !important;
+}
+
+.hybridrox-container .facetwp-checkbox.checked {
+  background-color: #eaf1ff !important;
+  border-color: #c6d8ff;
+  color: #0b3aa8 !important;
+}
+
+.hybridrox-container .facetwp-number {
+  width: 100%;
+  border: 1px solid var(--hrx-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #fff !important;
+  color: #0f172a !important;
+}
+
+.hybridrox-container .facetwp-btn {
+  margin-top: 10px !important;
+  border-radius: 999px;
+  padding: 10px 16px;
+  border: none;
+  background: #0f172a !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+.hybridrox-container .facetwp-counter {
+  color: #64748b !important;
+}
+
+.hybridrox-empty {
+  background: #fff;
+  border: 1px dashed var(--hrx-border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.hybridrox-single-header {
+  border-bottom: 1px solid var(--hrx-border);
+  margin-bottom: 18px;
+}
+
+.hybridrox-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.hybridrox-badge {
+  background: #0f172a;
+  color: #fff;
+  border-radius: 100px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.hybridrox-block {
+  border: 1px solid var(--hrx-border);
+  border-left: 4px solid var(--hrx-primary);
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+@media (max-width: 980px) {
+  .hybridrox-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hybridrox-sidebar {
+    position: static;
+  }
+}
